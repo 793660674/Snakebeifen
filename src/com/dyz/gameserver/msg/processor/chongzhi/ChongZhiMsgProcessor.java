@@ -23,7 +23,9 @@ public class ChongZhiMsgProcessor extends MsgProcessor implements INotAuthProces
 		gameSession2.sendMsg(new ChongZhiResponse(1, avatar.account.getMoney()+""));
 		System.out.println(msgs[1]+"充值");
 		/*ssGameSession gameSession2=GameSessionManager.getInstance().getAvatarByUuid(uuid+"");*/
-		gameSession.sendMsg(new ChongZhiResponse(1, msgs[1]));
+		if (gameSession!=null) {
+			gameSession.sendMsg(new ChongZhiResponse(1, msgs[1]));
+		}
 	}
 	
 }
